@@ -19,15 +19,6 @@ class Detection:
     def show(self, frame):
         cv2.namedWindow("YOLO Detection", cv2.WINDOW_NORMAL)
         cv2.resizeWindow("YOLO Detection", 1280, 720)  # Resize window
-        
-        while self.vid.isOpened():
-
-            cv2.imshow("YOLO Detection", frame)  # Show results
-            self.out.write(frame)  # Save video frame
-            
-
-            if cv2.waitKey(1) & 0xFF == ord("q"):  # Press 'q' to exit
-                break
 
     def run(self, show=False):
         cv2.namedWindow("YOLO Detection", cv2.WINDOW_NORMAL)
