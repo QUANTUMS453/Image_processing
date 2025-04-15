@@ -1,12 +1,16 @@
-# Image_processing
-learning stuff and nothing else
+Image_processing
 
+Just learning and experimenting — nothing too serious (yet) 😄
 
-would be happy if you have anything to make it better
+🧠 This project uses YOLO for object detection.
+🔗 Check it out here: Ultralytics YOLO GitHub
+⚙️ Current Setup
 
-for this project I'm using YOLO, check them out https://github.com/ultralytics/ultralytics
+    This version requires YOLOv10x.
 
+    The code should automatically download the model.
+    If it doesn’t, you can manually download it from Ultralytics (most of the time it works just fine).
 
-in this version of code you'll need to download yolov10x, it must try to download it, if it didn't try to download it ftom ultralytics(most of cases there was np at all)
+🔄 Future Goals
 
-I'll try to make it dynamic so every yolo version can be used
+    Make the code more dynamic so it works with any YOLO version.
