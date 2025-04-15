@@ -3,7 +3,9 @@ Image_processing
 Just learning and experimenting — nothing too serious (yet) 😄
 
 🧠 This project uses YOLO for object detection.
-🔗 Check it out here: Ultralytics YOLO GitHub
+🔗 Check it out here: https://github.com/ultralytics/ultralytics
+
+
 ⚙️ Current Setup
 
     This version requires YOLOv10x.
