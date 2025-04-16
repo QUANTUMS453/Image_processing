@@ -66,7 +66,7 @@ class MainWindow(qtw.QWidget):
     def run_detection(self):
         model_name = "yolov10x"  #TODO make this dynamic later
         det = Detection(self.selected_path, model_name)
-        det.run()
+        det.run(show=True)
 
 
         

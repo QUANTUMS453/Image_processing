@@ -18,22 +18,28 @@ class Detection:
 
     def show(self, frame):
         cv2.namedWindow("YOLO Detection", cv2.WINDOW_NORMAL)
-        cv2.resizeWindow("YOLO Detection", 1280, 720)  # Resize window
+        cv2.resizeWindow("YOLO Detection", 1280, 720)
+        cv2.imshow("YOLO Detection", frame)
 
     def run(self, show=False):
-        cv2.namedWindow("YOLO Detection", cv2.WINDOW_NORMAL)
-        cv2.resizeWindow("YOLO Detection", 1280, 720)  # Resize window
+        width = int(self.vid.get(cv2.CAP_PROP_FRAME_WIDTH))
+        height = int(self.vid.get(cv2.CAP_PROP_FRAME_HEIGHT))
+        fps = self.vid.get(cv2.CAP_PROP_FPS)
+        self.out = cv2.VideoWriter("output.mp4", self.fourcc, fps, (width, height))
 
         while self.vid.isOpened():
             ret, frame = self.vid.read()
             if not ret:
-                break  # Stop if video ends
-            annotated_frame = self.annotate_frame((frame))
+                break
+            annotated_frame = self.annotate_frame(frame)
 
             if show:
                 self.show(annotated_frame)
+                
 
-            if cv2.waitKey(1) & 0xFF == ord("q"):  # Press 'q' to exit
+            self.out.write(annotated_frame)
+
+            if cv2.waitKey(1) & 0xFF == ord("q"):
                 break
 
         self.vid.release()
